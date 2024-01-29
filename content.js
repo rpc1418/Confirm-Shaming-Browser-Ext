@@ -3,7 +3,7 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
     const textContent = document.body.innerText;
 
     const sentenceCount = textContent.length;
-    
+    console.log(textContent);
     chrome.storage.local.set({ sentenceCount: sentenceCount });
   }
 
