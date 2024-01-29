@@ -17,7 +17,7 @@ def detect_confirm_shaming(sentiment_score, threshold=0.5):
         return False
 
 # Example usage
-confirmation_dialogue = "GmailImages Google offered in: हिन्दी বাংলা తెలుగు मराठी தமிழ் ગુજરાતી ಕನ್ನಡ മലയാളം ਪੰਜਾਬੀ India About Advertising Business How Search works Privacy Terms Settings"
+confirmation_dialogue = "subject"
 sentiment_score = perform_sentiment_analysis(confirmation_dialogue)
 li=confirmation_dialogue.split(" ")
 for i in li:
