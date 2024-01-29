@@ -17,7 +17,7 @@ def perform_sentiment_analysis(text):
     
     return sentiment_polarity
 
-def detect_confirm_shaming(sentiment_score, threshold=0):
+def detect_confirm_shaming(sentiment_score, threshold=0.5):
     # Define a threshold for considering sentiment as potential confirm shaming
     if sentiment_score < threshold:
         return True
@@ -28,8 +28,7 @@ def detect_confirm_shaming(sentiment_score, threshold=0):
 def analyze_sentiment():
     data = request.get_json()
     text = data['text']
-
-    sentiment_score = perform_sentiment_analysis(text)
+    sentiment_score =   perform_sentiment_analysis(text)
     is_confirm_shaming = detect_confirm_shaming(sentiment_score)
 
     result = {

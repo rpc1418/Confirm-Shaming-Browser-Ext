@@ -3,14 +3,14 @@
 chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
   if (request.action === 'pageLoaded') {
     const textContent = document.body.innerText;
-    console.log(textContent);
+    const text=textContent.split(/[\n/ !?]+/);
+    console.log(text);
     // Perform sentiment analysis using the Flask API
     performSentimentAnalysis(textContent, function(sentimentResult) {
       // Send the result to the background script
       chrome.runtime.sendMessage({ action: 'sentimentAnalysisResult', result: sentimentResult });
     });
   }
-
   return true;
 });
 
