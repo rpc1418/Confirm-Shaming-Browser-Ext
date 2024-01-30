@@ -3,6 +3,7 @@ from flask import Flask, request, jsonify
 from flask_cors import CORS  # Import the CORS extension
 from textblob import TextBlob
 
+# hii om
 app = Flask(__name__)
 CORS(app)
 
