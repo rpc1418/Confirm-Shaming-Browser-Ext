@@ -34,7 +34,7 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
 
 function performSentimentAnalysis(text, callback) {
   // Call the Flask API
-  fetch('http://localhost:5000/analyze_sentiment', {
+  fetch('http://localhost:5007/analyze_sentiment', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
