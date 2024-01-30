@@ -1,6 +1,6 @@
 # app.py
 
-
+# hi om 
 from flask import Flask, request, jsonify
 from flask_cors import CORS  # Import the CORS extension
 from textblob import TextBlob
