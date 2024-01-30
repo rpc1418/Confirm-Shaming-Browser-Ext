@@ -1,3 +1,7 @@
 .words{
     font-weight: bold;
 }
+
+body {
+    min-width: 300px;
+}
