@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
-  "name": "Sentence Counter",
+  "name": "EthicoPrompt",
   "version": "1.0",
-  "description": "Counts the number of sentences on a webpage",
+  "description": "checks for confirm shaming",
   "permissions": ["activeTab", "storage"],
   "background": {
     "service_worker": "background.js"

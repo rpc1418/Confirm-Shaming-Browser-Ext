@@ -4,7 +4,7 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
   if (request.action === 'pageLoaded') {
     const textContent = document.body.innerText;
     const text = textContent.split(/[\n/ .!?]+/);
-
+    const avgw=0;
     // Array to store each element along with its sentiment score
     const elementsWithSentiment = [];
 
@@ -23,9 +23,10 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
           text: elementsWithSentiment,
           averageSentimentScore: averageSentimentScore,
         }});
-        if(sentimentResult.averageSentimentScore<0.5) alert("This page might have confirm shaming concern! Please refer our extension for further information.");
       });
     });
+
+    alert("check the EthicoPrompt extension once confirm shaming detected.");
     
   }
   
@@ -55,14 +56,13 @@ function performSentimentAnalysis(text, callback) {
 
 function calculateAverageSentiment(elements) {
   const nonZeroSentimentElements = elements.filter(element => element.sentiment_score !== 0);
-
+  
   if (nonZeroSentimentElements.length === 0) {
     return 0;  // Avoid division by zero
   }
 
   const sumSentimentScores = nonZeroSentimentElements.reduce((sum, element) => sum + element.sentiment_score, 0);
   const averageSentimentScore = sumSentimentScores / nonZeroSentimentElements.length;
-
   return averageSentimentScore;
 }
 

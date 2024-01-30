@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function () {
       // Display the overall sentiment result in the pop-up
       const popupText = sentimentResult.averageSentimentScore >= 0.5
         ? 'Confirmation dialogue seems fine. '+sentimentResult.averageSentimentScore
-        : 'Potential confirm shaming detected. Display warning to the user. '+sentimentResult.averageSentimentScore;
+        : 'Potential confirm shaming detected and the average score is   '+sentimentResult.averageSentimentScore+"\n(more the sentimental score, less the confirm shaming.)\n";
 
       document.getElementById('popupText').innerText = popupText;
 
@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 function displayNegativeSentimentElements(container, text) {
-  container.innerHTML = '';  // Clear previous content
+  container.innerHTML = 'Words Responsible for this threat: ';  // Clear previous content
 
   text.forEach(element => {
     // Check if the sentiment score is less than 0.5
